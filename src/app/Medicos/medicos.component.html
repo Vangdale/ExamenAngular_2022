@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        
+        <th>Nombre</th>
+        <th>Especialidad</th>
+        <th>Foto</th>
+        <th>Hospital</th>
+
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let medico of medicos">
+        <tr> 
+    
+            <td>{{medico.Nombre}}</td>
+            <td>{{medico.Especialidad}}</td>
+            <td><img src='/src/assets/imagen/{{medico.Foto}}'/></td>
+            <td>{{medico.Hospital}}</td>
+            
+        </tr>
+        </ng-container>
+        <tr *ngIf="!medicos || medicos.length==0">
+            <td colspan="4"> No hay medicos </td>
+        </tr>
+    </tbody>
+</table>

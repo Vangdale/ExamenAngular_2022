@@ -1,0 +1,23 @@
+<deplegable-hospitales (globalElegido)="alCambiar($event)" [medicos]="getNumMedicos()"></deplegable-hospitales>
+<br><br><br><br><br>
+<table class="table">
+    <thead>
+        
+        <th>Nombre</th>
+        <th>Foto</th>
+
+
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let medico of medicos">
+        <tr *ngIf="medico.Hospital == seleccion"> 
+            <td>{{medico.Nombre}}</td>
+            <td><img src='/src/assets/imagen/{{medico.Foto}}'/></td>
+            
+        </tr>
+        </ng-container>
+        <tr *ngIf="!medicos || medicos.length==0">
+            <td colspan="4"> No hay medicos </td>
+        </tr>
+    </tbody>
+</table>

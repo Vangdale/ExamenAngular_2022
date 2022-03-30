@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        
+        <th>Nombre</th>
+        <th>FechaNacimiento</th>
+        <th>Foto</th>
+        <th>Medico</th>
+
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let paciente of pacientes">
+        <tr> 
+    
+            <td>{{paciente.Nombre}}</td>
+            <td>{{paciente.FechaNac | date:'dd-MM-yyyy'}}</td> <!-- con DatePipe -->
+            <td><img src="/src/assets/imagen/{{paciente.Foto}}"/></td>
+            <td>{{paciente.Medico}}</td>
+            
+        </tr>
+        </ng-container>
+        <tr *ngIf="!pacientes || pacientes.length==0">
+            <td colspan="4"> No hay pacientes </td>
+        </tr>
+    </tbody>
+</table>
